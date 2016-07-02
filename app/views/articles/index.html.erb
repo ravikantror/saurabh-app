@@ -1,39 +1,12 @@
-<h1>All Post!!</h1>
-<h2>
-Welcome <%= current_user.email %> !!
-<%= link_to 'LogOut', destroy_user_session_path, :method => :delete %>
-<br>
-<%= link_to 'Home', home_path, method: :get %>
-<%= link_to 'All Post', articles_path %>
-<%= link_to 'New Post', new_article_path %> 
+<div id="index_post">
+  <%= render :partial => "articles/index_post" %>
+</div>
+
+<div id="div_crud"></div>
 
 
-</h2>
+<!-- <div id="show_post"></div> -->
 
-<br>
+<!-- <div id="new_post"></div> -->
 
-<h2>Listing articles</h2>
- 
-<table>
-  <tr>
-  	<th>User Id</th>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Post Type</th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.user_id %></td>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= article.post_type %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', delete_path(article),
-              method: :get,
-              data: { confirm: 'Are you sure?' } %></td>
-
-    </tr>
-  <% end %>
-</table>
+<!-- <div id="edit_post"></div> -->
