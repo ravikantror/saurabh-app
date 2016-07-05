@@ -10,7 +10,7 @@ Welcome <%= current_user.email %> !!
  <h2>Listing articles</h2>
 <table width="600">
   <tr>
-  	<th>User Id</th>
+    <th>User Id</th>
     <th>Article Id</th>
     <th>Title</th>
     <th>Text</th>
@@ -18,7 +18,7 @@ Welcome <%= current_user.email %> !!
   </tr>
  
   <% @articles.each do |article| %>
-    <tr class = 'my_post_tr', id = "tr_id_<%=article.id%>" >
+    <tr class = 'tid', id = "tid-<%=article.id%>" >
       <td><%= article.user_id %></td>
       <td><%= article.id %></td>
       <td><%= article.title %></td>

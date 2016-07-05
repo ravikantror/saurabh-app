@@ -1,4 +1,6 @@
-$("#div_crud").html("<%= j render(:partial => 'edit_post') %>");
+// $("#div_crud").html("<%= j render(:partial => 'edit_post') %>");
+
+$("#tid-<%=@article.id%>").html("<%= j render(:partial => 'edit') %>");
 
 // $("#edit_post").html("<%= j render(:partial => 'edit_post')%>");
 // $("#new_post").html("")
