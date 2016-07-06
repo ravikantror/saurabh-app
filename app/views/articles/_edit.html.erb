@@ -1,31 +1,31 @@
 <tbody width="600"> 
   
   <%# @articles.each do |article| %> 
+  <%= form_for :article, url: article_path(@article), method: :post, :remote => true do |f| %>
   <tr class = 'tid', id = "tid-<%=@article.id%>" >
-    <td><%= @article.user_id %></td>  
-    <td><%= @article.id %></td>
+    <td>
+      <%= @article.user_id %>
+    </td>  
+    <td>
+      <%= @article.id %>
+    </td>
    
     <td>
-      <%= form_for :article, url: article_path(@article), method: :post, :remote => true do |f| %>
       <%= f.text_field :title %>
-      <% end %>
     </td>
 
     <td>
-      <%= form_for :article, url: article_path(@article), method: :post, :remote => true do |f| %>
       <%= f.text_area :text %>
-      <% end %>
     </td>
     
-    <td><%= @article.post_type %></td>
-      
+    <td>
+      <%= @article.post_type %>
+    </td>
    
     <td>
-      <%= form_for :article, url: article_path(@article), method: :post, :remote => true do |f| %>
       <%= f.submit %>
-      <% end %>
     </td>
     
   </tr>
-  <%# end %>
+  <% end %>
 </tbody>
