@@ -1,6 +1,5 @@
 <tbody width="600"> 
   
-  <%# @articles.each do |article| %> 
   <%= form_for :article, url: article_path(@article), method: :post, :remote => true do |f| %>
   <tr class = 'tid', id = "tid-<%=@article.id%>" >
     <td>
@@ -23,7 +22,7 @@
     </td>
    
     <td>
-      <%= f.submit %>
+      <%= f.submit 'Save' %>
     </td>
     
   </tr>
