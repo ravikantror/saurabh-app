@@ -1,10 +1,11 @@
 <div id="index_post">
   <%= render :partial => "articles/index_post" %>
+  
 </div>
 
 <div id="div_crud"></div>
 
-
+<%= will_paginate @articles %>
 <!-- <div id="show_post"></div> -->
 
 <!-- <div id="new_post"></div> -->

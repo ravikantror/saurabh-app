@@ -47,3 +47,7 @@ group :development do
 end
 
 gem 'devise'
+
+gem 'will_paginate'
+
+gem 'paperclip'

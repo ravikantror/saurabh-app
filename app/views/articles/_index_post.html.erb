@@ -1,14 +1,17 @@
+<div class="container">
 <h2>
 Welcome <%= current_user.email %> !!
 <%= link_to 'LogOut', destroy_user_session_path, :method => :delete %>
-<br>
+</h2>
+
+<h3>
 <%= link_to 'Home', home_path, method: :get %>
 <%= link_to 'All Post', articles_path %>
 <%= link_to 'New Post', new_article_path, :remote => true %> 
-</h2>
+</h3>
  
  <h2>Listing articles</h2>
-<table width="600">
+<table class="table table-bordered">
  <thead>
   <tr>
     <th>User Id</th>
@@ -37,3 +40,4 @@ Welcome <%= current_user.email %> !!
   <% end %>
   </tbody>
 </table>
+</div>

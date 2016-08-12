@@ -1,14 +1,15 @@
+<div class="container">
 <h2>New Post!!</h2>
 
 <%= form_for :article, :url => {'action' => 'create'}, :remote =>true do |f| %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :id => 'txttittle' %>
   </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.label :text %>
+    <%= f.text_area :text, :id => 'txtarea' %>
   </p>
  <p>
     <%= f.label :post_type %>
@@ -16,6 +17,26 @@
     
  </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit :id => "btnsubmit" %>
   </p>
 <% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#btnsubmit").click(function(){
+        if($("#txttittle").val() == "")
+        {
+          alert("Enter Tittle");
+          $("#txttittle").focus();
+          return false;
+        }
+        if($("#txtarea").val() == "")
+        {
+          alert("Enter Text");
+          $("#txtarea").focus();
+          return false;
+        }
+      });
+  })
+</script>
